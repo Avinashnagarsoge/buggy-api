@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    
+    <changeSet author="Avinash Nagarsoge" id="9999999-4">
+        <comment>Deleting all users having login_id 'user1@gmail.com'</comment>
+        <sql>
+         delete from user where login_id = 'user1@gmail.com';
+        </sql>
+    </changeSet>
+    <changeSet author="Avinash Nagarsoge" id="9999999-5">
+        <comment>Inserting user 'user1@gmail.com'</comment>
+        <sql>
+         INSERT INTO user (FIRST_NAME, LAST_NAME, LOGIN_ID, PASSWORD, PLACE, CREATED_AT)
+            VALUES
+            ('User 1', 'A', 'user1@gmail.com', 'user1ABC', 'SomePlace', CURRENT_TIMESTAMP);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
